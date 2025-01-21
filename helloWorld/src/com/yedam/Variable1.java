@@ -38,5 +38,5 @@ public class Variable1 {
 	 }
 	 System.out.println("sum 의 값은 " + sum);
  }
- //commit 2025-01-21 pm 04:09
+ //commit 2025-01-21 pm 04:09 커멘드에서 커밋
 }

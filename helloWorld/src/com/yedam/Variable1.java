@@ -38,4 +38,5 @@ public class Variable1 {
 	 }
 	 System.out.println("sum 의 값은 " + sum);
  }
+ //commit
 }

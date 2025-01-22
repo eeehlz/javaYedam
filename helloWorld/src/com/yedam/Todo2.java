@@ -22,7 +22,7 @@ public class Todo2 {
 		friendAry[2] = "홍길동,01064549760,남자";
 
 		while (run) {
-			System.out.println("1.목록 2.등록 3.조회 4.삭제 5.수정 6.종료");
+			System.out.println("1.목록 2.등록 3.성별조회 4.삭제 5.수정 6.종료");
 			System.out.print("선택 >");
 			int menu = Integer.parseInt(sc.nextLine());
 
@@ -48,7 +48,12 @@ public class Todo2 {
 				break;
 
 			case 3: // 조회 (성별)
-				System.out.print("성별조회 >");
+				for (int i = 0; i < friendAry.length; i++) {
+					if (friendAry[i] != null) {
+						System.out.printf("이름:%s\n", friendAry[i].split(",")[0]);
+					}
+				}
+				System.out.print("성별조회 이름을 입력하세요 >>");
 				String searchName = sc.nextLine();
 				for (int i = 0; i < friendAry.length; i++) {
 					if (friendAry[i] != null) {
@@ -74,20 +79,26 @@ public class Todo2 {
 				break;
 
 			case 5:
-				System.out.print("수정할 이름 >");
+				System.out.print("번호 수정할 이름 >");
+
 				String numName = sc.nextLine();
 				for (int i = 0; i < friendAry.length; i++) {
-					if (friendAry[i] != null && friendAry[i].split(",")[0].equals(numName)) {
-						String number = sc.nextLine();
-						friendAry[i] = friendAry[i].split(",")[0] + "," + number + "," + friendAry[i].split(",")[2];
+					if (friendAry[i] != null) {
+						if (friendAry[i].split(",")[0].equals(numName)) {
+							System.out.printf("%s님이 맞습니다 - 변경할 번호 입력 >>", friendAry[i].split(",")[0]);
+							String chNumber = sc.nextLine();
+							String[] newNum = friendAry[i].split(",");
+							newNum[1] = chNumber;
+							friendAry[i] = String.join(",", newNum);
+							System.out.print("번호가 변경되었습니다.\n");
+							
+							break;
+						}
 						
-					} else {
-						System.out.println("없습니다");
-						break;
 					}
-					
 				}
 				break;
+				
 
 			case 6:
 				System.out.println("프로그램 종료");

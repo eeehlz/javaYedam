@@ -81,21 +81,19 @@ public class Todo2 {
 			case 5:
 				System.out.print("번호 수정할 이름 >");
 
-                String numName = sc.nextLine();
-                for (int i = 0; i < friendAry.length; i++) {
-                    if (friendAry[i] != null) {
-                        if (friendAry[i].split(",")[0].equals(numName)) {
-                            System.out.printf("%s님이 맞습니다 - 변경할 번호 입력 >>", friendAry[i].split(",")[0]);
-                            String number = sc.nextLine();
-                            friendAry[i] = friendAry[i].split(",")[0] + "," + number + "," + friendAry[i].split(",")[2];
-                            System.out.print("번호가 변경되었습니다.\n");
-                            break;
-                        }
-
-                    }
-                }
-                break;
-				
+				String numName = sc.nextLine();
+				for (int i = 0; i < friendAry.length; i++) {
+					if (friendAry[i] != null) {
+						if (friendAry[i].split(",")[0].equals(numName)) {
+							System.out.printf("%s님이 맞습니다 - 변경할 번호 입력 >>", friendAry[i].split(",")[0]);
+							String number = sc.nextLine();
+							friendAry[i] = friendAry[i].split(",")[0] + "," + number + "," + friendAry[i].split(",")[2];
+							System.out.print("번호가 변경되었습니다.\n");
+							break;
+						}
+					}
+				}
+				break;
 
 			case 6:
 				System.out.println("프로그램 종료");

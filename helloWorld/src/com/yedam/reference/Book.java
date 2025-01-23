@@ -8,18 +8,20 @@ public class Book {
 	String bookName;
 	String writer;
 	String company;
-	int price;
+//	int price;
 	
 	Book(){
 		
 	}
 	
 	
-	Book(String bookName, String writer, String company, int price){
+	Book(String bookName, String writer, String company){
 		this.bookName = bookName;
 		this.writer = writer;
 		this.company = company;
-		this.price = price;
+//		this.price = price;
+		
+		//, int price
 	}
 	
 	

@@ -1,41 +1,55 @@
 package com.yedam.reference;
 
-import java.util.Iterator;
+//import java.util.Iterator;
 
 public class Calculator {
 	// 1월달 출력.
 	public void showCalendar() {
-		String[]days = {"Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"};
-		 for(String day : days) {
-			 System.out.printf("%4s", day);
-		 }
-		 System.out.println("\n---------------------------------------------");
+		int spaces = 6;
+		int lastDate = 31;
+		String[] dateAry = new String[30];
+		// 배열에 값 채우기
+		for (int i = 0; i < dateAry.length; i++) {
+			if (i < spaces) {
+				dateAry[i] = "";
+			} else {
+				dateAry[i] = "" + (i + 1 - spaces);
+			}
+		}
+
+		String[] days = { "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };
+		for (String day : days) {
+			System.out.printf("%4s", day);
+		}
+		System.out.println("\n---------------------------------------------");
+
+//		 for (int i = 0; i < dateAry.length; i++) {
+//			
+//		}
 	}
-	
+
 	public Book getBookInfo(String btilte, Book[] bookAry) {
 //		Book[] bookRepo = {new Book("이것이 자바다","신용권","한빛미디어",10000)
 //		,new Book("자바스크립트기초","김자바","자바출판사",15000)
 //		,new Book("혼자공부하는자바","혼공자","한빛미디어",20000)
 //		};
-		
-		for(int i = 0; i < bookAry.length; i++) {
-			if(bookAry[i].getBookName().equals(btilte)) {
+
+		for (int i = 0; i < bookAry.length; i++) {
+			if (bookAry[i].getBookName().equals(btilte)) {
 				return bookAry[i];
 			}
 		}
 		return null;
 	}
-	
 
 	// 1~100 사이의 임의값을 n개 반환
-	public int[]randomAry(int n){
+	public int[] randomAry(int n) {
 		int[] result = new int[n];
 		for (int i = 0; i < result.length; i++) {
-			result[i] = (int)(Math.random()*100) + 1;
+			result[i] = (int) (Math.random() * 100) + 1;
 		}
 		return result;
 	}
-	
 
 	// 두 숫자중에서 큰값을 반환(return)해주는 메소드
 	public int getMax(int num1, int num2) {

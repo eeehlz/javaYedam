@@ -59,9 +59,6 @@ public class BookExe {
 			}
 
 		}
-		if (!end) {
-			System.out.println("찾는 도서 없음");
-		}
 	} // case 3 end
 
 	// case 4

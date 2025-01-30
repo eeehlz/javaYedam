@@ -17,6 +17,8 @@ public class CalculatorExe {
 		Calculator cal = new Calculator(); // 메서드 호출
 		cal.showCalendar();
 		
+		
+		
 		Book author = cal.getBookInfo("혼자공부하는가고", bookStore);
 		if(author != null) {
 			author.showDetailInfo();

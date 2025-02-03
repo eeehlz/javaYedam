@@ -38,6 +38,6 @@ public class ReferenceExe3 {
 			}
 		}
 		
-		
+		sc.close();
 	}
 }

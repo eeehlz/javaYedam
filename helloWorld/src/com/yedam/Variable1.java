@@ -4,12 +4,12 @@ public class Variable1 {
  public static void main(String[] args) {
 	 //int (4byte)
 	 int num1 = 1101111;
-	 short num2 = 27;
-	 long num4 = 929293132132123L;
+//	 short num2 = 27;
+//	 long num4 = 929293132132123L;
 	 System.out.println(Long.MAX_VALUE);
 	 
 	 byte num5 = 20;
-	 byte result = (byte) (num2 + num5); //강제형변환
+//	 byte result = (byte) (num2 + num5); //강제형변환
 	 int intResult = num1 + num5;
 	 System.out.println("값 :::" +intResult);
 	 

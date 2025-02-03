@@ -2,7 +2,7 @@ package com.yedam;
 
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+//import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 /* 
  * 친구정보관리 앱 v.1

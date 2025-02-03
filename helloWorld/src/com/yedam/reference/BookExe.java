@@ -52,7 +52,7 @@ public class BookExe {
 	public static void searchList() {
 		System.out.print("출판사 조회 >");
 		String press = sc.nextLine();
-		boolean end = false;
+//		boolean end = false;
 		for (int i = 0; i < bookRepository.length; i++) {
 			if (bookRepository[i] != null && bookRepository[i].getCompany().equals(press)) {
 				System.out.println(bookRepository[i].showBookInfo());

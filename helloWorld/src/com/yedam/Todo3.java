@@ -65,6 +65,6 @@ public class Todo3 {
 				System.out.println("다시 시작하세요.");
 			}
 		}
-
+sc.close();
 	}
 }

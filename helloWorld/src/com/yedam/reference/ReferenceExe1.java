@@ -42,8 +42,8 @@ public class ReferenceExe1 {
 		System.out.println("method1()이 호출되었습니다.");
 	}
 
-	private void method2() {
-		System.out.println("method2()이(가) 호출되었습니다.");
-	}
+//	private void method2() {
+//		System.out.println("method2()이(가) 호출되었습니다.");
+//	}
 
 }

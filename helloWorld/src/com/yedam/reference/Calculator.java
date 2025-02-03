@@ -5,9 +5,9 @@ package com.yedam.reference;
 public class Calculator {
 	// 1월달 출력.
 	public void showCalendar(){
-		int spaces = 6;
+		int spaces = 3;
 		int lastDate = 31;
-		String[] dateAry = new String[30];
+		String[] dateAry = new String[spaces + lastDate];
 		// 배열에 값 채우기
 		for (int i = 0; i < dateAry.length; i++) {
 			if (i < spaces) {
@@ -88,7 +88,7 @@ public class Calculator {
 	public int sum(int num1, int num2) {
 		return num1 + num2;
 	}
-
+	//동일한 메소드명을 중복정의 : overloading
 	public double sum(double num1, double num2) {
 		return num1 + num2;
 	}

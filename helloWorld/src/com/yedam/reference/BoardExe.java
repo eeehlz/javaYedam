@@ -117,13 +117,14 @@ public class BoardExe {
 	
 		for (int i = 0; i < boardRepo.length; i++) {
 			if (boardRepo[i] == null) {
-				if(title.length() > 5 || title.length() < 15) {
+				if(title.length() < 5 || title.length() > 15) {
+					System.out.println("등록 불가합니다.");
+					return;
+				}else {
 					boardRepo[i] = new Board(title, content, LoginId, new Date());
 					System.out.println("등록이 완료되었습니다.");
 					break;
-				}else {
-					System.out.println("등록 불가합니다.");
-					break;
+					
 				}
 //				break; // 한건만 등록. 후 break;
 			}

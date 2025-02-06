@@ -1,28 +1,50 @@
 package com.yedam.interfaces.emp;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainExe {
 
+	static Scanner sc = new Scanner(System.in);
+	static EmpDAO dao = new EmpListExe();
+
 	public static void main(String[] args) {
 		// 스캐너, run
-		Scanner sc = new Scanner(System.in);
 		boolean run = true;
 
 		// 배열, 컬렉션.
-		EmpDAO dao = new EmpListExe();
+//		EmpDAO dao = new EmpListExe();
 
 		while (run) {
 			System.out.println("1.추가 2.수정 3.삭제 4.조회 9.종료");
 			System.out.print("선택>> ");
-			int menu = Integer.parseInt(sc.nextLine());
+			int menu = 0;
+
+			try {
+				menu = sc.nextInt();
+			} catch (InputMismatchException e) {
+				// 정상실행이 진행되도록 구성.
+				System.out.println("메뉴를 확인하세요.");
+				sc.nextLine();
+				continue;
+			}
+//			menu = Integer.parseInt(sc.nextLine());
+			sc.nextLine();
 //			int menu = sc.nextInt();
 //			sc.nextLine();
 
 			switch (menu) {
 			case 1: // 추가 사원번호, 이름, 전화번호.
-				System.out.print("사원번호>> ");
-				int empNo = Integer.parseInt(sc.nextLine());
+				int empNo = 0;
+				while (true) {
+					try {
+						System.out.print("사원번호>> ");
+						empNo = Integer.parseInt(sc.nextLine());
+						break;
+					} catch (NumberFormatException e) {
+						System.out.println("사원번호를 확인하세요.");
+					}
+				}
 				System.out.print("이름>> ");
 				String eName = sc.nextLine();
 				System.out.print("전화번호>> ");
@@ -31,7 +53,8 @@ public class MainExe {
 				if (dao.registerEmp(new Employee(empNo, eName, tel))) {
 					System.out.println("등록성공");
 				}
-				break; // end of case 1.
+				break;// end of case 1.
+
 			case 2: // 수정항목 : 전화번호, 입사일자, 급여. + 사원번호
 				System.out.print("사원번호입력>> ");
 				empNo = Integer.parseInt(sc.nextLine());
@@ -55,12 +78,13 @@ public class MainExe {
 				break; // case 2 종료
 
 			case 3: // 삭제.
-				System.out.print("사원번호입력>> ");
-				empNo = Integer.parseInt(sc.nextLine());
-				if (dao.removeEmp(empNo)) {
-					System.out.println("삭제완료");
+				try {
+					remove();
+				} catch (NumberFormatException e) {
+					System.out.println("사원번호 확인");
 				}
 				break;
+
 			case 4: // 목록. 조회조건(급여 이상)
 //				System.out.print("조회 급여조건>> ");
 //				sal = Integer.parseInt(sc.nextLine());
@@ -90,6 +114,17 @@ public class MainExe {
 		}
 		System.out.println("end of prog.");
 		sc.close();
+
+	} // end of main
+
+	// 예외 떠넘기기 예제
+	static void remove() throws NumberFormatException {
+		System.out.print("사원번호>> ");
+		int empNo = Integer.parseInt(sc.nextLine());
+
+		if (dao.removeEmp(empNo)) {
+			System.out.println("삭제완료");
+		}
 	}
 
 }

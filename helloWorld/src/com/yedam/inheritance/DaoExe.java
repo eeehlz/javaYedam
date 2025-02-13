@@ -1,4 +1,4 @@
-package com.yedam.inheritance;
+              package com.yedam.inheritance;
 
 import java.util.Scanner;
 
